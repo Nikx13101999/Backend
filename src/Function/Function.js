@@ -372,6 +372,21 @@ async function EmitFunction(now, hours, minutes,second) {
       const Record6 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: FourSecondAdd } });
       console.log(Record6.length,"FourSecondAdd");
 
+      var FiveSecondAdd = new Date(now - 5 * 60 * 1000 + 5);
+      console.log(FiveSecondAdd,"FiveSecondAdd");
+      const Record7 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: FiveSecondAdd } });
+      console.log(Record7.length,"FiveSecondAdd");
+
+      var SixSecondAdd = new Date(now - 5 * 60 * 1000 + 6);
+      console.log(SixSecondAdd,"SixSecondAdd");
+      const Record8 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: SixSecondAdd } });
+      console.log(Record8.length,"SixSecondAdd");
+
+      var SevenSecondAdd = new Date(now - 5 * 60 * 1000 + 7);
+      console.log(SevenSecondAdd,"SevenSecondAdd");
+      const Record9 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: SevenSecondAdd } });
+      console.log(Record9.length,"SevenSecondAdd");
+
       if (Record2.length == 0) {
 
         const Record3 = await Share.find({ CategoryId: Record[i]._id });
