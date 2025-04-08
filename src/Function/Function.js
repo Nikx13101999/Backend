@@ -349,10 +349,28 @@ async function EmitFunction(now, hours, minutes,second) {
       var fiveMinutesAgo = new Date(now - 5 * 60 * 1000);
 
       console.log(fiveMinutesAgo,"fiveMinutesAgo");
-      
       const Record2 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: fiveMinutesAgo } });
+      console.log(Record2.length,"fiveMinutesAgo");
 
-      console.log(Record2.length,"Record2 Length");
+      var OneSecondAdd = new Date(now - 5 * 60 * 1000 + 1);
+      console.log(OneSecondAdd,"OneSecondAdd");
+      const Record3 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: OneSecondAdd } });
+      console.log(Record3.length,"OneSecondAdd");
+
+      var TwoSecondAdd = new Date(now - 5 * 60 * 1000 + 2);
+      console.log(TwoSecondAdd,"TwoSecondAdd");
+      const Record4 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: TwoSecondAdd } });
+      console.log(Record4.length,"TwoSecondAdd");
+
+      var ThreeSecondAdd = new Date(now - 5 * 60 * 1000 + 3);
+      console.log(ThreeSecondAdd,"ThreeSecondAdd");
+      const Record5 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: ThreeSecondAdd } });
+      console.log(Record5.length,"ThreeSecondAdd");
+
+      var FourSecondAdd = new Date(now - 5 * 60 * 1000 + 4);
+      console.log(FourSecondAdd,"FourSecondAdd");
+      const Record6 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: FourSecondAdd } });
+      console.log(Record6.length,"FourSecondAdd");
 
       if (Record2.length == 0) {
 
