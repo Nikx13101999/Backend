@@ -347,6 +347,9 @@ async function EmitFunction(now, hours, minutes,second) {
     for (var i = 0; i < Record.length; i++) {
 
       var fiveMinutesAgo = new Date(now - 5 * 60 * 1000);
+
+      console.log(fiveMinutesAgo,"fiveMinutesAgo");
+      
       const Record2 = await PurchaseShare.find({ CategoryId: Record[i]._id,createdAt: { $gte: fiveMinutesAgo } });
 
       console.log(Record2.length,"Record2 Length");
